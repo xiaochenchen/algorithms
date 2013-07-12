@@ -1,4 +1,4 @@
-package com.xcc;
+package com.xcc.queue;
 
 import java.util.LinkedList;
 import java.util.List;

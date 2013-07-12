@@ -1,4 +1,4 @@
-package com.xcc;
+package com.xcc.stack;
 
 import java.util.LinkedList;
 import java.util.List;

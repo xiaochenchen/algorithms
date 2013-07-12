@@ -1,4 +1,4 @@
-package com.xcc;
+package com.xcc.stack;
 
 import java.util.ArrayList;
 import java.util.List;
