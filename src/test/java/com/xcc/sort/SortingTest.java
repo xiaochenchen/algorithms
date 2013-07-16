@@ -49,4 +49,13 @@ public class SortingTest
         HeapSort.sortWithHeap(arrayToSort);
         System.out.println("After Sort: " + Arrays.toString(arrayToSort));
     }
+
+    @Test
+    public void HeapSortWithLoopTest()
+    {
+        int[] arrayToSort = {6,5,3,1,8,7,2,4};
+        System.out.println("Before Sort: " + Arrays.toString(arrayToSort));
+        HeapSort.sortLoop(arrayToSort);
+        System.out.println("After Sort: " + Arrays.toString(arrayToSort));
+    }
 }
