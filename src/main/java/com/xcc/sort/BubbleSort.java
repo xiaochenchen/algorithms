@@ -8,7 +8,11 @@ import java.util.List;
  * Date: 7/14/13
  * Time: 11:44 PM
  *
- * Bubble Sort
+ * Bubble Sort Properties
+ * Stable
+ * O(1) extra space
+ * O(n^2) comparisons and swaps
+ * Adaptive: O(n) when nearly sorted
  */
 public class BubbleSort
 {
