@@ -58,4 +58,13 @@ public class SortingTest
         HeapSort.sortLoop(arrayToSort);
         System.out.println("After Sort: " + Arrays.toString(arrayToSort));
     }
+
+    @Test
+    public void MergeSortTest()
+    {
+        int[] arrayToSort = {6,5,3,1,8,7,2,4};
+        System.out.println("Before Sort: " + Arrays.toString(arrayToSort));
+        MergeSort.sort(arrayToSort);
+        System.out.println("After Sort: " + Arrays.toString(arrayToSort));
+    }
 }
