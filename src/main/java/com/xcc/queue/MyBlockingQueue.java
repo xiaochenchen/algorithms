@@ -38,11 +38,12 @@ public class MyBlockingQueue<T> {
             return false;
         }
 
+        queue.add(e);
+
         if(queue.size() == 1) {
             notifyAll();
         }
-
-        queue.add(e);
+        
         return true;
     }
 
@@ -51,30 +52,38 @@ public class MyBlockingQueue<T> {
             return null;
         }
 
-        if(queue.size() == limit) {
+        T ret = queue.remove(0);
+
+        if(queue.size() == limit - 1) {
             notifyAll();
         }
 
-        return queue.remove(0);
+        return ret;
     }
 
     public synchronized void put(T e) throws InterruptedException {
         while(queue.size() == limit) {
             wait();
         }
-        if(queue.size() == 0) {
-            notifyAll();
-        }
+        
         queue.add(e);
+        
+        if(queue.size() == 1) {
+            notifyAll();
+        }        
     }
 
     public synchronized T take() throws InterruptedException {
         while(queue.size() == 0) {
             wait();
         }
-        if(queue.size() == limit) {
+        
+        T ret = queue.remove(0);
+        
+        if(queue.size() == limit - 1) {
             notifyAll();
         }
-        return queue.remove(0);
+        
+        return ret;
     }
 }
